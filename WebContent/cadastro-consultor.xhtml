@@ -4,25 +4,31 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head></h:head> 
+<h:head>
+	
+</h:head> 
 <body> 
 	<h1>Cadastro de Consultor Natura</h1>
-	<h:form>
-		<div>
-			<h:outputLabel value="Nome" for="nome"/>
-			<h:inputText value="" id="nome"/>
-		</div>
-		<div>
-			<h:outputLabel value="CPF" for="cpf"/>
-			<h:inputText value="" id="cpf"/>
-		</div>
-		<div>
-			<h:outputLabel value="Telefone" for="telefone"/>
-			<h:inputText value="" id="telefone" />
-		</div>
-		<div>
-			<h:commandButton action="" value="Cadastrar" />
-		</div>
-	</h:form>
+	<fieldset>
+	<legend>Cadastro</legend>
+		<h:form>
+		<h:messages/>
+			<div>
+				<h:outputLabel value="Nome" for="nome"/>
+				<h:inputText value="#{consultorBean.consultor.nome}" id="nome"/>
+			</div>
+			<div>
+				<h:outputLabel value="CPF" for="cpf"/>
+				<h:inputText value="#{consultorBean.consultor.cpf}" id="cpf"/>
+			</div>
+			<div>
+				<h:outputLabel value="Telefone" for="telefone"/>
+				<h:inputText value="#{consultorBean.consultor.telefone}" id="telefone" />
+			</div>
+			<div>
+				<h:commandButton action="#{consultorBean.cadastrar()}" value="Cadastrar" />
+			</div>
+		</h:form>
+		</fieldset>
 </body> 
 </html>
